@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
     public bool sonidosalto = false;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,7 +86,14 @@ public class GameManager : MonoBehaviour
                 if(cols[i].transform.position.x <= -10){
                     cols[i].transform.position = new Vector3(10, -3, 0);
                 }
-                cols[i].transform.position = cols[i].transform.position + new Vector3(-2, 0, 0) * Time.deltaTime * velocidad;
+                if(puntaje > 100)
+                {
+                    cols[i].transform.position = cols[i].transform.position + new Vector3(-2.7f, 0, 0) * Time.deltaTime * velocidad;
+                }
+                else
+                {
+                    cols[i].transform.position = cols[i].transform.position + new Vector3(-2, 0, 0) * Time.deltaTime * velocidad;
+                }
             }
 
             //Mover arboles 1
@@ -93,7 +102,14 @@ public class GameManager : MonoBehaviour
                     float randomObs = Random.Range(12, 25);
                     arboles1[i].transform.position = new Vector3(randomObs, -2, 0);
                 }
-                arboles1[i].transform.position = arboles1[i].transform.position + new Vector3(-2, 0, 0) * Time.deltaTime * velocidad;
+                if (puntaje > 100)
+                {
+                    arboles1[i].transform.position = arboles1[i].transform.position + new Vector3(-2.1f, 0, 0) * Time.deltaTime * velocidad;
+                }
+                else
+                {
+                    arboles1[i].transform.position = arboles1[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                }
             }
 
             //Mover arboles 2
@@ -102,7 +118,14 @@ public class GameManager : MonoBehaviour
                     float randomObs = Random.Range(24, 37);
                     arboles2[i].transform.position = new Vector3(randomObs, -2, 0);
                 }
-                arboles2[i].transform.position = arboles2[i].transform.position + new Vector3(-2, 0, 0) * Time.deltaTime * velocidad;
+                if (puntaje > 100)
+                {
+                    arboles2[i].transform.position = arboles2[i].transform.position + new Vector3(-2.1f, 0, 0) * Time.deltaTime * velocidad;
+                }
+                else
+                {
+                    arboles2[i].transform.position = arboles2[i].transform.position + new Vector3(-1, 0, 0) * Time.deltaTime * velocidad;
+                }
             }
 
             //Mover obstaculos
@@ -112,7 +135,14 @@ public class GameManager : MonoBehaviour
                     obstaculos[i].transform.position = new Vector3(randomObs, -3, 0);
                     puntaje += 10;
                 }
-                obstaculos[i].transform.position = obstaculos[i].transform.position + new Vector3(-2, 0, 0) * Time.deltaTime * velocidad;
+                if (puntaje > 100)
+                {
+                    obstaculos[i].transform.position = obstaculos[i].transform.position + new Vector3(-2.7f, 0, 0) * Time.deltaTime * velocidad;
+                }
+                else
+                {
+                    obstaculos[i].transform.position = obstaculos[i].transform.position + new Vector3(-2, 0, 0) * Time.deltaTime * velocidad;
+                }
             }
 
             //Mover enemigos
@@ -122,7 +152,14 @@ public class GameManager : MonoBehaviour
                     Enemigo1[i].transform.position = new Vector3(randomObs, -2.6f, 0);
                     puntaje += 10;
                 }
-                Enemigo1[i].transform.position = Enemigo1[i].transform.position + new Vector3(-2, 0, 0) * Time.deltaTime * velocidad;
+                if (puntaje > 100)
+                {
+                    Enemigo1[i].transform.position = Enemigo1[i].transform.position + new Vector3(-2.7f, 0, 0) * Time.deltaTime * velocidad;
+                }
+                else
+                {
+                    Enemigo1[i].transform.position = Enemigo1[i].transform.position + new Vector3(-2, 0, 0) * Time.deltaTime * velocidad;
+                }
             }
 
             //PUNTAJE
